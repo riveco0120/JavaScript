@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear nodos</title>
+</head>
+<body>
+
+    <script>
+
+        //Creando nodos 
+        let txtNumero1=document.createElement('input');
+        txtNumero1.setAttribute('type','text');
+        txtNumero1.setAttribute('id','numero1');
+        txtNumero1.setAttribute('placeholder','Ingrese un numero');
+
+        
+        let txtNumero2=document.createElement('input');
+        txtNumero2.setAttribute('type','text');
+        txtNumero2.setAttribute('id','numero2');
+        txtNumero2.setAttribute('placeholder','Ingrese otro numero');
+
+        let salto = document.createElement('br');
+        
+        let btn1=document.createElement('input');
+        btn1.setAttribute('type','button');
+        btn1.setAttribute('id','b1');
+        btn1.setAttribute('value','SUMA');
+
+
+        let btn2=document.createElement('input');
+        btn2.setAttribute('type','button');
+        btn2.setAttribute('id','b2');
+        btn2.setAttribute('value','RESTA');
+
+
+        //adicionando los nodos al body 
+        document.body.appendChild(txtNumero1);
+        document.body.appendChild(txtNumero2);
+        document.body.appendChild(salto);
+        document.body.appendChild(btn1);
+        document.body.appendChild(btn2);
+           
+        //Agregaondo eventos 
+        btn1.addEventListener('click',()=>{
+            let n1 = parseInt(txtNumero1.value);
+            let n2 = parseInt(txtNumero2.value);
+            let t = n1+n2;
+            alert("El resultado de la suma es: " + t);
+        }),
+
+        btn2.addEventListener('click',()=>{
+            let n1 = parseInt(txtNumero1.value);
+            let n2 = parseInt(txtNumero2.value);
+            let t = n1-n2;
+            alert("El resultado de la resta es: " + t);
+        })
+
+
+
+    </script>
+
+</body>
+</html>
