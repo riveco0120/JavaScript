@@ -1,1 +1,44 @@
-hmtl
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=sc, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id= "form">
+        <input type="email" placeholder="correo" name="mails[]">
+    </form>
+
+    <script>
+
+        //Creando nodos
+        var boton = document.createElement('input');
+        boton.setAttribute("type", "button")
+        boton.setAttribute("value", "Agregar")
+
+        //Agregando nodos 
+        document.body.appendChild(boton);
+
+        //Agregando evento 
+        boton.addEventListener("click", function () {
+            var input = document.createElement("input");
+            input.setAttribute('type', 'email');
+            input.setAttribute('placeholder', 'Ingrese un numero');
+            input.setAttribute("name","mails[]")
+
+            $("#form").appendChild(input);
+        });
+
+        function $(selector) {
+            return document.querySelector(selector);
+        }
+
+    </script>
+</body>
+
+</html>
