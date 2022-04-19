@@ -17,11 +17,14 @@
     <script>
 
         //Creando nodos
+        var div = document.createElement("div");
+        div.setAttribute("class","close");
         var boton = document.createElement('input');
         boton.setAttribute("type", "button")
         boton.setAttribute("value", "Agregar")
 
         //Agregando nodos 
+        document.body.appendChild(div);
         document.body.appendChild(boton);
 
         //Agregando evento 
@@ -32,11 +35,41 @@
             input.setAttribute("name","mails[]")
 
             $("#form").appendChild(input);
+
+            aler("Presionaste el boton");
+            bindClose();
         });
 
+        function bindClose(){
+        var elements = document.querySelectorAll(".close");
+        for(var i =elements.length-1;i>=0;i--){
+            var el =elements[i];
+            el.addEventListener("click" ,function(){
+                this.parentNode.style.display="none";
+            });
+        }
+        }
         function $(selector) {
             return document.querySelector(selector);
         }
+
+        function aler(msg){
+            var div = document.createElement("div");
+            div.setAttribute("class","alert");
+            div.innerHTML=msg;
+            var close = document.createElement("div");
+            close.style.float="right";
+            close.innerHTML="X";
+            close.setAttribute("class","close");
+
+            div.appendChild(close);
+            $("body").insertBefore(div,$("body").firstChild);
+
+            bindClose();
+
+        }
+
+
 
     </script>
 </body>
